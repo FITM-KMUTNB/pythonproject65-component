@@ -2,8 +2,8 @@ import pgzrun
 from random import randint, choice
 import string
 
-WIDTH = 800
-HEIGHT = 500
+WIDTH = 1600
+HEIGHT = 900
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 # LETTER = {"letter": "", "x": 0, "y": 0}
@@ -40,7 +40,7 @@ def on_key_down(key, mod, unicode):
             SCORE["WRONG"] += 2
 
 def add_letter():
-    letter = choice(string.ascii_letters).lower()
+    letter = choice(string.ascii_letters).upper()
     x = randint(10, WIDTH - 20)
     y = 1
     ON_SCREEN_LETTERS.append({"letter": letter, "x": x, "y": y})
