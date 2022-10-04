@@ -20,7 +20,6 @@ def draw():  # Pygame Zero draw function
     screen.draw.text("RIGHT: " + str(SCORE["RIGHT"]), (WIDTH - 130, 10), fontsize=30, color=WHITE)
     screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 130, 40), fontsize=30, color=WHITE)
 
-
 def update():
     for index, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
@@ -40,13 +39,11 @@ def on_key_down(key, mod, unicode):
         else:
             SCORE["WRONG"] += 2
 
-
 def add_letter():
     letter = choice(string.ascii_letters).lower()
     x = randint(10, WIDTH - 20)
     y = 1
     ON_SCREEN_LETTERS.append({"letter": letter, "x": x, "y": y})
-
 
 def delete_letter(i):
     del ON_SCREEN_LETTERS[i]
