@@ -35,11 +35,11 @@ def on_key_down(key, mod, unicode): # On Key down function()
     if unicode:
         for index, LETTER in enumerate(ON_SCREEN_LETTERS):
             if LETTER["letter"] == unicode:
-                SCORE["RIGHT"] += 1
+                SCORE["RIGHT"] += 2
                 delete_letter(index)
                 return
         else:
-            SCORE["WRONG"] += 1
+            SCORE["WRONG"] += 2
 
 
 def add_letter():
