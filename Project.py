@@ -22,11 +22,11 @@ def draw():  # Pygame Zero draw function
 
 
 def update():
-    for i, LETTER in enumerate(ON_SCREEN_LETTERS):
+    for index, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
         if LETTER["y"] == HEIGHT - 5:
             SCORE["WRONG"] += 1
-            delete_letter(i)
+            delete_letter(index)
     while len(ON_SCREEN_LETTERS) < 4:
         add_letter()
 
