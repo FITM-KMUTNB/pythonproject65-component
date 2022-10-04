@@ -5,7 +5,7 @@ pygame.init()
 
 #Create a displace surface object
 #Below line will let you toggle from maximize to the initial size
-DISPLAYSURF = pygame.display.set_mode((400, 300), RESIZABLE)
+DISPLAYSURF = pygame.display.set_mode((1600, 900), RESIZABLE)
 
 mainLoop = True
 
