@@ -33,10 +33,10 @@ def update():
 
 def on_key_down(key, mod, unicode): # On Key down function()
     if unicode:
-        for i, LETTER in enumerate(ON_SCREEN_LETTERS):
+        for index, LETTER in enumerate(ON_SCREEN_LETTERS):
             if LETTER["letter"] == unicode:
                 SCORE["RIGHT"] += 1
-                delete_letter(i)
+                delete_letter(index)
                 return
         else:
             SCORE["WRONG"] += 1
