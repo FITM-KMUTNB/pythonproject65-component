@@ -1,2 +1,4 @@
 pygame==2.1.2
 pgzero
+pygame_gui==0.6.4
+python-i18n==0.3.9
