@@ -25,7 +25,7 @@ def update():
     for index, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
         if LETTER["y"] == HEIGHT - 5:
-            SCORE["WRONG"] += 1
+            SCORE["WRONG"] += 2
             delete_letter(index)
     while len(ON_SCREEN_LETTERS) < 4:
         add_letter()
