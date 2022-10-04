@@ -21,7 +21,7 @@ def draw():  # Pygame Zero draw function
     screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 130, 40), fontsize=30, color=WHITE)
 
 
-def update():
+def update(): # Pygame Zero update() function
     for i, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
         if LETTER["y"] == HEIGHT - 5:
