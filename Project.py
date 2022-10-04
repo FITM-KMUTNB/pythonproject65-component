@@ -25,7 +25,7 @@ def update():
     for index, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
         if LETTER["y"] == HEIGHT - 5:
-            SCORE["WRONG"] += 2
+            SCORE["WRONG"] += 1
             delete_letter(index)
     while len(ON_SCREEN_LETTERS) < 4:
         add_letter()
@@ -34,11 +34,11 @@ def on_key_down(key, mod, unicode):
     if unicode:
         for index, LETTER in enumerate(ON_SCREEN_LETTERS):
             if LETTER["letter"] == unicode:
-                SCORE["RIGHT"] += 2
+                SCORE["RIGHT"] += 1
                 delete_letter(index)
                 return
         else:
-            SCORE["WRONG"] += 2
+            SCORE["WRONG"] += 1
 
 
 def add_letter():
