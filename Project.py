@@ -21,7 +21,7 @@ def draw():  # Pygame Zero draw function
     screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 130, 40), fontsize=30, color=WHITE)
 
 
-def update(): # Pygame Zero update() function
+def update():
     for i, LETTER in enumerate(ON_SCREEN_LETTERS):
         LETTER["y"] += VELOCITY
         if LETTER["y"] == HEIGHT - 5:
@@ -31,7 +31,7 @@ def update(): # Pygame Zero update() function
         add_letter()
 
 
-def on_key_down(key, mod, unicode):
+def on_key_down(key, mod, unicode): # On Key down function()
     if unicode:
         for i, LETTER in enumerate(ON_SCREEN_LETTERS):
             if LETTER["letter"] == unicode:
