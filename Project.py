@@ -30,6 +30,9 @@ def update():
     while len(ON_SCREEN_LETTERS) < 4:
         add_letter()
 
+def update_list():
+    pass
+
 
 def on_key_down(key, mod, unicode): # On Key down function()
     if unicode:
