@@ -2,6 +2,7 @@ import os
 import pygame
 import pygame_gui
 
+from pygame_gui.core import ObjectID
 from pygame.locals import *
 from pygame import mixer
 from sys import exit
@@ -24,6 +25,8 @@ class App:
         self.background = pygame.transform.scale(self.background, (WIDTH, HEIGHT))
 
         self.manager = pygame_gui.UIManager((WIDTH, HEIGHT))
+        self.manager.get_theme().load_theme('./__provider__.json')
+
         window_root_container = pygame_gui.core.UIContainer(
             relative_rect=pygame.Rect((0, 0), (WIDTH, HEIGHT)),
             is_window_root_container=True,
@@ -49,6 +52,15 @@ class App:
             relative_rect=hello_button_rect,
             text='Settings',
             container=player_configuration_container,
+            manager=self.manager
+        )
+
+        play_button_rect = pygame.Rect((0, 0), (300, 100))
+        play_button_rect.center = (WIDTH / 2, HEIGHT / 2)
+        self.play_button = pygame_gui.elements.UIButton(
+            relative_rect=play_button_rect,
+            text='Play',
+            container=window_root_container,
             manager=self.manager
         )
 
