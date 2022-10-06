@@ -9,19 +9,22 @@ from sys import exit
 
 WIDTH: int = 1624
 HEIGHT: int = 1080
+
+MyFont = pygame.font.SysFont("8-bit_Arcade_In.ttf",15)
+
 class App:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption('Component App')
 
         mixer.init()
-        mixer.music.load('./src/music/root_music.mp3')
+        mixer.music.load(os.getcwd() + '/music/root_music.mp3')
         mixer.music.play(loops=1)
         mixer.music.set_volume(0.3)
 
         self.rect = Rect(0, 0, WIDTH, HEIGHT)
         self.screen = pygame.display.set_mode(self.rect.size)
-        self.background = pygame.image.load('./src/images/root_background.jpg')
+        self.background = pygame.image.load(os.getcwd() + '/images/root_background.jpg')
         self.background = pygame.transform.scale(self.background, (WIDTH, HEIGHT))
 
         self.manager = pygame_gui.UIManager((WIDTH, HEIGHT))
@@ -46,7 +49,7 @@ class App:
             container=window_root_container,
             manager=self.manager
         )
-
+#settng botton
         hello_button_rect = pygame.Rect((520, 5), (100, 50))
         self.hello_button = pygame_gui.elements.UIButton(
             relative_rect=hello_button_rect,
@@ -54,12 +57,12 @@ class App:
             container=player_configuration_container,
             manager=self.manager
         )
-
+#play botton
         play_button_rect = pygame.Rect((0, 0), (300, 100))
         play_button_rect.center = (WIDTH / 2, HEIGHT / 2)
         self.play_button = pygame_gui.elements.UIButton(
             relative_rect=play_button_rect,
-            text='Play',
+            text=MyFont.render("Play",True,("Blue")),
             container=window_root_container,
             manager=self.manager
         )
