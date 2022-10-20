@@ -1,3 +1,0 @@
-pygame==2.1.2
-pgzero
-pygame_gui==0.6.4
