@@ -1,5 +1,5 @@
-from . import engine
-from .classes import pages, typing_without_music
+from .. import engine, program
+from . import pages
 
 from pygame.locals import *
 from pygame_gui.core import ObjectID
@@ -13,30 +13,11 @@ import time
 import sys
 import os
 
-class Typing(engine.Engine):
-    """
-    About typing test game using pygame to create game which is a project at King Mongkut's University of Technology North Bangkok. 
-    By students of information of network engineering, there are 6 project groups, you can see it in our config file.
-    
-    Instructions:
-    You must include a variable which is a Class constructor,
-    which contains display_title, width, and height, to be used as part of the program.
-    
-    Example as a Code:
-    from pygame.locals import *
-    
-    rect: Rect = Rect(0, 0, 1280, 720)
-    
-    typing_game: Typing = Typing('untitled', rect)
-    typing_game.run()
-    """
+class TypingWithoutMusic(engine.Engine):
     
     
     def __init__(self, display_title: str, rect: Rect, theme: str = None, scrolling_background: bool = False):
         pygame.display.set_caption(display_title)
-        
-        icon = pygame.image.load(os.getcwd() + '/source/app/assets/image/window_icon.png')
-        pygame.display.set_icon(icon)
         
         self.display_title = display_title
         
@@ -49,7 +30,9 @@ class Typing(engine.Engine):
         self.height: int = rect.size[1]
         
         pygame.mixer.init()
-        pygame.mixer.music.pause()
+        pygame.mixer.music.load(os.getcwd() + '/source/app/assets/audio/giga_chad.ogg')
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.0)
         
         self.window_surface = pygame.display.set_mode(rect.size)
         self.background = pygame.Surface(rect.size)
@@ -74,8 +57,8 @@ class Typing(engine.Engine):
                 
             self.scroll -= 6
             
-            if abs(self.scroll) > self.background_image.get_width():
-                self.scroll = 0
+            if abs(scroll) > self.background_image.get_width():
+                scroll = 0
                 
         else:
             self.window_surface.blit(self.background_image, (0, 0))
@@ -125,24 +108,24 @@ class Typing(engine.Engine):
             object_id=ObjectID(object_id='@scoreboard_sign_button')
         )
         
-        music_closed_button = pygame_gui.elements.UIButton(
+        music_opened_button = pygame_gui.elements.UIButton(
             relative_rect=pygame.Rect(
                 (self.width - 330, -15),
                 (150, 150)
             ),
             text='',
             manager=self.ui_manager,
-            object_id=ObjectID(object_id='@music_opened_button'),
+            object_id=ObjectID(object_id='@music_closed_button'),
         )
         
-        disabled_audio = typing_without_music.TypingWithoutMusic(
+        enabled_audio = program.Typing(
             self.display_title,
             self.rect,
-            self.theme
+            self.theme,
         )
         
         play_game_state: bool = False 
-        disabled_audio_state: bool = False
+        enabled_audio_state: bool = False
         
         while is_running:
             time_delta = clock.tick(60) / 1000.0
@@ -159,38 +142,38 @@ class Typing(engine.Engine):
                            
                         play_game_state = True
                         
-                    if event.ui_element == music_closed_button:
+                    if event.ui_element == music_opened_button:
                         click_effect = pygame.mixer.Sound(os.getcwd() + '/source/app/assets/audio/effect/click.ogg')
                         click_effect.play()
                         
-                        disabled_audio_state = True
+                        enabled_audio_state = True
                         
                     if event.ui_element == scoreboard_sign_button:
                         click_effect = pygame.mixer.Sound(os.getcwd() + '/source/app/assets/audio/effect/click.ogg')
-                        click_effect.play()
+                        click_effect.play()   
                         
                         webbrowser.open("http://www.google.com")
                     
-                    if event.ui_element == exit_button:                 
+                    if event.ui_element == exit_button:             
                         pygame.quit()
                         exit()
                     
                 self.ui_manager.process_events(event)
-                
+                    
             self.ui_manager.update(time_delta)
             self.scroll_background(enable=self.enabled_scrolling_background)
             
             if play_game_state:
-                print(disabled_audio_state)
+                print(enabled_audio_state)
                 self.ui_menu.Play(
                     window_width=self.width,
                     window_height=self.height,
                     theme=self.theme,
-                    enabled_music=disabled_audio_state
+                    enabled_music=enabled_audio_state
                 ).initialize()
             
-            if disabled_audio_state:
-                disabled_audio.run()
+            if enabled_audio_state:
+                enabled_audio.run()
             
             self.ui_manager.draw_ui(self.window_surface)
             

@@ -1,0 +1,187 @@
+{
+    "@sunshine_typing_logo": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/sunshine_typing_logo.png",
+                "sub_surface_rect": "0,0,500,300"
+            }
+        }
+    },
+    "@play_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/play.png",
+                "sub_surface_rect": "0,0,300,120"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/play_hovered.png",
+                "sub_surface_rect": "0,0,300,120"
+            }
+        }
+    },
+    "@exit_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/exit.png",
+                "sub_surface_rect": "0,0,300,120"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/exit_hovered.png",
+                "sub_surface_rect": "0,0,300,120"
+            }
+        }
+    },
+    "@scoreboard_sign_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/scoreboard_sign.png",
+                "sub_surface_rect": "0,0,150,150"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/scoreboard_sign_hovered.png",
+                "sub_surface_rect": "0,0,150,150"
+            }
+        }
+    },
+    "@music_opened_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/sound_open.png",
+                "sub_surface_rect": "0,0,128,128"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/sound_open_hovered.png",
+                "sub_surface_rect": "0,0,128,128"
+            }
+        }
+    },
+    "@music_closed_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/sound_close.png",
+                "sub_surface_rect": "0,0,128,128"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/sound_close_hovered.png",
+                "sub_surface_rect": "0,0,128,128"
+            }
+        }
+    },
+    "@back_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/back.png",
+                "sub_surface_rect": "0,0,300,120"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/back_hovered.png",
+                "sub_surface_rect": "0,0,300,120"
+            }
+        }
+    }
+}
