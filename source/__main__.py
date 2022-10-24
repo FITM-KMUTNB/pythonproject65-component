@@ -4,9 +4,11 @@ from pygame.locals import *
 
 import os
 
+
 configure.WINDOW_NAME = 'Sunshine Typing By Component Team'
 configure.WINDOW_RECT = Rect(0, 0, 1280, 720)
 configure.GAME_THEME_PATH = os.getcwd() + '/source/app/data/themes/default_theme.json'
+configure.SENTENCES_PATH = os.getcwd() + '/sentences.txt'
 configure.ENABLED_SCROLLING_BACKGROUND = False
 
 

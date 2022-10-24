@@ -42,18 +42,19 @@ class Typing(engine.Engine):
         
         self.theme = theme
         
-        self.enabled_scrolling_background: bool = scrolling_background
+        self.scrolling_background = scrolling_background
         
         self.rect = rect
         self.width: int = rect.size[0]
         self.height: int = rect.size[1]
         
-        pygame.mixer.init()
-        pygame.mixer.music.pause()
+        self.music_mixer_channel = pygame.mixer.Channel(1)
         
         self.window_surface = pygame.display.set_mode(rect.size)
         self.background = pygame.Surface(rect.size)
         self.background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/background.jpg').convert()
+        
+        self.sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/sunshine_typing_logo.png').convert()
         
         self.scroll: int = 0
         self.tiles: int = math.ceil(self.width / self.background_image.get_width()) + 1
@@ -62,8 +63,9 @@ class Typing(engine.Engine):
     
         self.ui_menu = pages
         
-    def scroll_background(self, enable: bool = False):
-        if enable:
+        
+    def scroll_background(self, enabled: bool = False):
+        if enabled:
             counter: int = 0
             while counter < self.tiles:
                 self.window_surface.blit(
@@ -85,14 +87,13 @@ class Typing(engine.Engine):
         clock = pygame.time.Clock()
         is_running: bool = True
         
-        sunshine_typing_logo = pygame_gui.elements.UIButton(
+        sunshine_typing_logo = pygame_gui.elements.UIImage(
             relative_rect=pygame.Rect(
                 ((self.width / 2) - 240, 80),
                 (500, 300)
             ),
-            text='',
+            image_surface=self.sunshine_typing_logo,
             manager=self.ui_manager,
-            object_id=ObjectID(object_id='@sunshine_typing_logo')
         )
         
         play_button = pygame_gui.elements.UIButton(
@@ -178,18 +179,18 @@ class Typing(engine.Engine):
                 self.ui_manager.process_events(event)
                 
             self.ui_manager.update(time_delta)
-            self.scroll_background(enable=self.enabled_scrolling_background)
-            
-            if play_game_state:
-                print(disabled_audio_state)
+            self.scroll_background(enabled=self.scrolling_background)
+                
+            if play_game_state and not disabled_audio_state:
                 self.ui_menu.Play(
-                    window_width=self.width,
-                    window_height=self.height,
+                    rect=self.rect,
                     theme=self.theme,
-                    enabled_music=disabled_audio_state
+                    music=True,
+                    scrolling_background=self.scrolling_background
                 ).initialize()
             
             if disabled_audio_state:
+                self.music_mixer_channel.pause()
                 disabled_audio.run()
             
             self.ui_manager.draw_ui(self.window_surface)
