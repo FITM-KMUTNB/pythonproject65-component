@@ -30,9 +30,9 @@ class Play:
         self.background = pygame.Surface(rect.size)
         self.background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/prepare_background.png').convert()
         
-        self.mini_sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/mini_sunshine_typing_logo.png').convert()
-        self.entry_name_background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/entry_name_background.png').convert()
-        self.name_label = pygame.image.load(os.getcwd() + '/source/app/assets/image/name_label.png').convert()
+        self.mini_sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/mini_sunshine_typing_logo.png')
+        self.entry_name_background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/entry_name_background.png')
+        self.name_label = pygame.image.load(os.getcwd() + '/source/app/assets/image/name_label.png')
         
         self.ui_manager = pygame_gui.UIManager((self.width, self.height))
         self.ui_manager.get_theme().load_theme(theme)

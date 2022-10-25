@@ -24,7 +24,7 @@ class Game(engine.Engine):
         self.background = pygame.Surface(rect.size)
         self.background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/core_background.png').convert()
         
-        self.mini_sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/mini_sunshine_typing_logo.png').convert()
+        self.mini_sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/mini_sunshine_typing_logo.png')
         
         self.ui_manager = pygame_gui.UIManager((self.width, self.height))
         self.ui_manager.get_theme().load_theme(theme)
@@ -54,7 +54,7 @@ class Game(engine.Engine):
         sentences = file.split('\n')
         receive_sentence = random.choice(sentences)
         
-        return sentences
+        return receive_sentence
     
     
     def start(self) -> None:
