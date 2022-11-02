@@ -54,7 +54,7 @@ class Typing(engine.Engine):
         self.background = pygame.Surface(rect.size)
         self.background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/background.jpg').convert()
         
-        self.sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/sunshine_typing_logo.png')
+        self.sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/sunshine_typing_logo.png').convert()
         
         self.scroll: int = 0
         self.tiles: int = math.ceil(self.width / self.background_image.get_width()) + 1
@@ -142,6 +142,12 @@ class Typing(engine.Engine):
             self.theme
         )
         
+        scoreboard_page = pages.Scoreboard(
+            rect=self.rect, 
+            theme=self.theme, 
+            music=True,
+        )
+        
         play_game_state: bool = False 
         disabled_audio_state: bool = False
         
@@ -170,7 +176,7 @@ class Typing(engine.Engine):
                         click_effect = pygame.mixer.Sound(os.getcwd() + '/source/app/assets/audio/effect/click.ogg')
                         click_effect.play()
                         
-                        webbrowser.open("http://www.google.com")
+                        scoreboard_page.initialize()
                     
                     if event.ui_element == exit_button:                 
                         pygame.quit()

@@ -215,6 +215,33 @@
             }
         }
     },
+    "@menu_button": {
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0"
+        },
+        "colours": {
+            "normal_bg": "#00000000",
+            "hovered_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "active_bg": "#00000000",
+            "normal_border": "#00000000",
+            "hovered_border": "#00000000",
+            "disabled_border": "#00000000",
+            "selected_border": "#00000000",
+            "active_border": "#00000000"
+        },
+        "images": {
+            "normal_image": {
+                "path": "./source/app/assets/image/menu.png",
+                "sub_surface_rect": "0,0,300,120"
+            },
+            "hovered_image": {
+                "path": "./source/app/assets/image/menu_hovered.png",
+                "sub_surface_rect": "0,0,300,120"
+            }
+        }
+    },
     "@entry_name": {
         "colours": {
             "dark_bg": "#00000000",
@@ -258,6 +285,168 @@
             "text_shadow": "1",
             "text_shadow_size": "3",
             "text_shadow_offset": "0,0"
+        }
+    },
+    "@top_rankings_title": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffaa00",
+            "text_shadow": "#5a330b"
+        },
+        "font": {
+            "name": "8bit_arcade",
+            "size": "48",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "8bit_arcade.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@sentence_label": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffffff",
+            "text_shadow": "#000000"
+        },
+        "font": {
+            "name": "inter",
+            "size": "26",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "inter-regular.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@finished_label": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffaa00",
+            "text_shadow": "#000000"
+        },
+        "font": {
+            "name": "8bit_arcade",
+            "size": "64",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "8bit_arcade.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@result_content": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffffff",
+            "text_shadow": "#000000"
+        },
+        "font": {
+            "name": "8bit_arcade",
+            "size": "48",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "8bit_arcade.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@result_title": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffaa00",
+            "text_shadow": "#5a330b"
+        },
+        "font": {
+            "name": "8bit_arcade",
+            "size": "36",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "8bit_arcade.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@top_ranking": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#ffffff",
+            "text_shadow": "#000000"
+        },
+        "font": {
+            "name": "8bit_arcade",
+            "size": "40",
+            "bold": "0",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "8bit_arcade.ttf"
+            }
+        },
+        "misc": {
+            "text_shadow": "1",
+            "text_shadow_size": "3",
+            "text_shadow_offset": "0,0"
+        }
+    },
+    "@sentence_text_entry": {
+        "colours": {
+            "dark_bg": "#55340f",
+            "selected_bg": "#55595e",
+            "normal_text": "#ffaa00",
+            "selected_text": "#FFFFFF",
+            "normal_border": "#000000"
+        },
+        "font": {
+            "name": "inter",
+            "size": "26",
+            "bold": "1",
+            "italic": "0",
+            "regular_resource": {
+                "package": "app.fonts",
+                "resource": "inter-regular.ttf"
+            },
+            "bold_resource": {
+                "package": "app.fonts",
+                "resource": "inter-bold.ttf"
+            }
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": 5,
+            "border_width": "2",
+            "shadow_width": "2",
+            "padding": "6,4"
         }
     }
 }
