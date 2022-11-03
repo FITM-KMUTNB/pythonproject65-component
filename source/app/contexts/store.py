@@ -1,0 +1,3 @@
+# Global State
+
+username: str = ""
