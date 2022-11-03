@@ -54,7 +54,7 @@ class Typing(engine.Engine):
         self.background = pygame.Surface(rect.size)
         self.background_image = pygame.image.load(os.getcwd() + '/source/app/assets/image/background.jpg').convert()
         
-        self.sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/sunshine_typing_logo.png').convert()
+        self.sunshine_typing_logo = pygame.image.load(os.getcwd() + '/source/app/assets/image/sunshine_typing_logo.png')
         
         self.scroll: int = 0
         self.tiles: int = math.ceil(self.width / self.background_image.get_width()) + 1

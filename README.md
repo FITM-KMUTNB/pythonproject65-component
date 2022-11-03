@@ -46,6 +46,8 @@ chmod +x ./run.sh
 
 ```
 You can click on **run.bat** to open the program.
+or
+.\run.bat
 ```
 
 ## 🔨 Authors
